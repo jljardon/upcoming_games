@@ -1,0 +1,4 @@
+#!/usr/bin/env ruby
+require_relative "../lib/upcoming_games"
+
+UpcomingGames::CLI.new.call
