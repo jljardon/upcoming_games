@@ -1,9 +1,9 @@
 class UpcomingGames::Scraper
-   BASE_URL = 'http://www.ign.com/upcoming/games'.freeze
-   DETAILS_URL = 'http://www.ign.com/games/'
+   BASE_URL = 'http://www.ign.com/upcoming/games'
+   DETAILS_URL = 'http://www.ign.com'
 
    def get_games_list
-      Nokogiri::HTML(open(BASE_URL)).css('.itemList .itemList-item')
+       Nokogiri::HTML(open(BASE_URL)).css('.itemList .itemList-item')
    end
 
    def get_game_details(url)
@@ -11,12 +11,12 @@ class UpcomingGames::Scraper
    end
 
    def game_list_scraper
-      get_games_list.each do |_upcoming_game|
+      get_games_list.each do |upcoming_game|
          game = UpcomingGames::Game.new
          game.title = upcoming_game.css('div .item-title a').text.strip
          game.release_date = upcoming_game.css('.releaseDate').text.strip
          game.genre = upcoming_game.css('.item-genre').text.strip
-         game.url = game.css('div .item-title a').attribute('href').value
+         game.url = upcoming_game.css('div .item-title a').attribute('href').value
       end
    end
 
