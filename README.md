@@ -20,7 +20,7 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+Run: upcoming_games after installing the gem.
 
 ## Development
 

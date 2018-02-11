@@ -7,20 +7,13 @@ Gem::Specification.new do |spec|
   spec.name          = "upcoming_games"
   spec.version       = UpcomingGames::VERSION
   spec.authors       = ["Jose Luis Jardon"]
-  spec.email         = ["<github email address>"]
+  spec.email         = ["jljardon.c@gmail.com"]
 
   spec.summary       = %q{This Gem allows you to look at the upcoming video games by name and see specific details of that game.}
   spec.homepage      = "https://github.com/jljardon/upcoming_games"
   spec.license       = "MIT"
-
-  # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'
-  # to allow pushing to a single host or delete this section to allow pushing to any host.
-  if spec.respond_to?(:metadata)
-    spec.metadata["allowed_push_host"] = "TODO: Set to 'http://mygemserver.com'"
-  else
-    raise "RubyGems 2.0 or newer is required to protect against " \
-      "public gem pushes."
-  end
+  spec.executables   = ["upcoming_games"]
+  spec.require_paths = ["lib", "lib/upcoming_games"]
 
   spec.files         = `git ls-files -z`.split("\x0").reject do |f|
     f.match(%r{^(test|spec|features)/})
